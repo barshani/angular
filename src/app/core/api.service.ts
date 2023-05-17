@@ -3,7 +3,6 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Customer, User } from '../app.component';
 import { environment } from 'src/environments/environment.development';
-
 @Injectable({
     providedIn: 'root'
 })
@@ -69,6 +68,9 @@ export class ApiService {
     }
      getOneCustomer(id: string): Observable<Customer> {
         return this.GET<Customer>(`customers/${id}`);
+    }
+     getUser(): Observable<User> {
+        return this.GET<User>(`users/token`);
     }
     getCustomer(): Observable<Array<Customer>> {
         return this.GET<Array<Customer>>(`customers`);

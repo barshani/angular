@@ -10,39 +10,39 @@ export class EmployeesPageComponent {
  employees:Array<Employee>=[
   {
     name:"yossi cohen",
-    phone:"0501234321",
+    birthday:"7/7/96",
     email:"yossi@gmail.com",
-    address:"20th wiesman beer tovia"
+    phone:"0501234321"
   },
   {
     name:"hila david",
-    phone:"0547564775",
+    birthday:"8/3/76",
     email:"hila@gmail.com",
-    address:"20th wiesman beer tovia"
+    phone:"0547564775",
   },
   {
     name:"lihi levy",
-    phone:"0578476354",
+    birthday:"7/1/00",
     email:"lihi@gmail.com",
-    address:"20th wiesman haifa"
+    phone:"0578476354",
   },
   {
     name:"yoav katz",
-    phone:"0506543562",
+    birthday:"9/11/99",
     email:"yoav@gmail.com",
-    address:"21th wiesman beer sheva"
+    phone:"0506543562"
   },
   {
     name:"liav brushenski",
-    phone:"0522333432",
+    birthday:"23/4/90",
     email:"liav@gmail.com",
-    address:"20th etrog hadera"
+    phone:"0522333432",
   },
   {
     name:"liat biloo",
-    phone:"0547564756",
+    birthday:"1/12/01",
     email:"liat@gmail.com",
-    address:"4th gilo naharia"
+    phone:"0547564756",
   }
  ];
  filtered:Array<Employee>=[];

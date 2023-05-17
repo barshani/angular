@@ -21,9 +21,10 @@ export interface Customer {
 export interface Employee {
     _id?: string | null;
     name?: string | null;
-    phone?:string | null;
     email?: string | null;
-    address?: string | null;
+    birthday?: string | null;
+    phone?:string | null;
+    
 }
 @Component({
   selector: 'app-root',

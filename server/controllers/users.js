@@ -25,7 +25,7 @@ module.exports = {
             if (!validPassword) throw 'Invalid password';
 
             const param = { email: value.email };
-            const token = jwt.sign(param, config.jwt_token, { expiresIn: '72800s' });
+            const token = jwt.sign(param, config.jwt_token, { expiresIn: '3600s' });
 
             res.json({
                 token: token,
