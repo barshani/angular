@@ -12,26 +12,33 @@ export class ApiService {
 
     // private token = ''
     private TOKEN_KEY = 'token'
+    private EMAIL_KEY = 'email'
 
     setToken(value: string) {
         localStorage.setItem(this.TOKEN_KEY, value);
-        // this.token = value;
     }
 
     getToken(): string {
         return localStorage.getItem(this.TOKEN_KEY) || '';
         // return this.token
     }
+     setEmail(value: string) {
+        localStorage.setItem(this.EMAIL_KEY, value);
+    }
+
+    getEmail(): string {
+        return localStorage.getItem(this.EMAIL_KEY) || '';
+        // return this.token
+    }
 
     deleteToken() {
         localStorage.removeItem(this.TOKEN_KEY);
     }
+    deleteEmail() {
+        localStorage.removeItem(this.EMAIL_KEY);
+    }
 
     constructor(private http: HttpClient) { }
-
-    getUserPosts() {
-        return this.http.get('https://jsonplaceholder.typicode.com/users/1/posts')
-    }
 
    
     GET<DynamicType>(endpoint: string): Observable<DynamicType> {
@@ -65,6 +72,9 @@ export class ApiService {
 
     login(user: User): Observable<User> {
         return this.POST<User>('users/login', user);
+    }
+    logout(user: User): Observable<User> {
+        return this.POST<User>('users/logout', user);
     }
      getOneCustomer(id: string): Observable<Customer> {
         return this.GET<Customer>(`customers/${id}`);

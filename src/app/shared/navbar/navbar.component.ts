@@ -1,4 +1,4 @@
-import { AfterViewInit, Component } from '@angular/core';
+import { AfterViewInit, Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from 'src/app/app.component';
 import { ApiService } from 'src/app/core/api.service';
@@ -11,6 +11,7 @@ import { SessionService } from 'src/app/core/session.service';
 })
 export class NavbarComponent implements AfterViewInit{
 user:Array<User>=[];
+email=''
  title(title: any) {
       throw new Error('Method not implemented.');
     }
@@ -21,8 +22,8 @@ user:Array<User>=[];
         private auth: AuthService
     ) { 
     }
-    
     loggedIn(): boolean {
+        this.email=this.api.getEmail();
         return this.auth.isLoggedIn();
     }
 
@@ -32,6 +33,7 @@ user:Array<User>=[];
 
     logout() {
         this.api.deleteToken();
+        this.api.deleteEmail();
         this.router.navigate(['login']);
     }
 }

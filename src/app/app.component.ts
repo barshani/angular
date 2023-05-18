@@ -32,28 +32,7 @@ export interface Employee {
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-    // title(title: any) {
-    //   throw new Error('Method not implemented.');
-    // }
-    // constructor(
-    //     private session: SessionService,
-    //     private api: ApiService,
-    //     private router: Router,
-    //     private auth: AuthService
-    // ) { }
-
-    // loggedIn(): boolean {
-    //     return this.auth.isLoggedIn();
-    // }
-
-    // ngAfterViewInit(): void {
-    //     this.session.redirectToHome();
-    // }
-
-    // logout() {
-    //     this.api.deleteToken();
-    //     this.router.navigate(['login']);
-    // }
-
-
-}
+    notificationClosed(state:boolean){
+    //dfdfd
+ }
+  }

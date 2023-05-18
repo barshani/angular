@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, EventEmitter, Output, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { User } from 'src/app/app.component';
@@ -34,10 +34,7 @@ export class LoginPageComponent implements AfterViewInit{
     }
      ngAfterViewInit(): void {
         this.logger.log('ngAfterViewInit');
-        // console.log('ngAfterViewInit');
-        this.nameField.nativeElement.focus();
     }
-
     onSubmit() {
         if (this.loginForm.invalid) {
             return;
@@ -45,6 +42,8 @@ export class LoginPageComponent implements AfterViewInit{
         this.api.login(this.loginForm.value).subscribe({
             next: (data: User) => {
                 if (data.token) this.api.setToken(data.token)
+                if (data.email) this.api.setEmail(data.email)
+
                 this.router.navigate([this.auth.redirectUrl]);
             },
             error: (err) =>{
@@ -53,6 +52,8 @@ export class LoginPageComponent implements AfterViewInit{
                 
             }
         })
+        
     }
+   
 
 }

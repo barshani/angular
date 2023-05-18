@@ -25,6 +25,7 @@ export class AuthService implements CanActivateChild {
 
     isLoggedIn(): boolean {
         const token = this.api.getToken();
+        
         return (token && token.length > 0) ? true : false;
     }
 }

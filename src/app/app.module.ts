@@ -8,6 +8,7 @@ import { CustomersModule } from './customers/customers.module';
 import { AuthModule } from './auth/auth.module';
 import { EmployeesModule } from './employees/employees.module';
 import { SharedModule } from './shared/shared.module';
+import { LoginPageComponent } from './auth/login-page/login-page.component';
 
 
 @NgModule({

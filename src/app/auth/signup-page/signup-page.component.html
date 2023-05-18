@@ -13,9 +13,13 @@
 
   <div class="mb-3">
     <label for="email" class="form-label">Email:</label>
-    <input formControlName="email" type="text" class="form-control" id="email" placeholder="name@email.com">
+    <input (change)="deleteEror()" formControlName="email" type="text" class="form-control" id="email"
+      placeholder="name@email.com">
   </div>
-
+  <div *ngIf="error" class="rounded text-danger bg-light p-2 mb-2">
+    <i class="bi-exclamation-circle-fill"></i>
+    email already exist
+  </div>
   <app-field-error [formField]="getFieldControl('email')"></app-field-error>
 
   <div class="mb-3">

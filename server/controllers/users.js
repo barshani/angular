@@ -23,10 +23,10 @@ module.exports = {
             if (!user) throw Error;
             const validPassword = await bcrypt.compare(value.password, user.password);
             if (!validPassword) throw 'Invalid password';
+            
 
             const param = { email: value.email };
             const token = jwt.sign(param, config.jwt_token, { expiresIn: '3600s' });
-
             res.json({
                 token: token,
                 id: user._id,
@@ -40,7 +40,6 @@ module.exports = {
             return;
         }
     },
-
     signup: async function (req, res, next) {
         try {
             const schema = joi.object({
@@ -66,7 +65,7 @@ module.exports = {
             const newUser = new User({
                 name: value.name,
                 email: value.email,
-                password: hash,
+                password: hash
             });
 
             await newUser.save();

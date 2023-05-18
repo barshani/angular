@@ -45,7 +45,7 @@ export class SignupPageComponent implements AfterViewInit {
     getFieldControl(field: string): FormControl {
         return this.signupForm.get(field) as FormControl;
     }
-
+   error=false;
     onSubmit() {
         if (this.signupForm.invalid) {
             return;
@@ -57,9 +57,14 @@ export class SignupPageComponent implements AfterViewInit {
             next: (data) => {
                 this.router.navigate(['login']);
             },
-            error: (err) => console.log(err)
+            error: (err) =>{ 
+            console.log(err)
+            this.error=true;
+            }
         })
     }
-
+ deleteEror(){
+        this.error=false;
+    }
 
 }

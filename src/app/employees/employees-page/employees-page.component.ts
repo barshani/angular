@@ -49,7 +49,7 @@ export class EmployeesPageComponent {
  getEmployee() {
     let text=document.getElementById('text') as HTMLInputElement;
     let word=text?.value;
-    this.filtered=this.employees.filter(employee=>employee.name?.includes(word))
+    this.filtered=this.employees.filter(employee=>employee.name?.includes(word.toLowerCase().trim()))
   }
 
     ngOnInit(): void {

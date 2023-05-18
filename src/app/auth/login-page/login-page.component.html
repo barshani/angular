@@ -6,7 +6,7 @@
   <div class="d-grid gap-2">
     <div class="mb-3">
       <label for="email" class="form-label">Email:</label>
-      <input formControlName="email" type="text" class="form-control" id="email" placeholder="name@email.com">
+      <input formControlName="email" type="text" class="form-control" id="email" placeholder="name@email.com" #email>
       <app-field-error [formField]="getFieldControl('email')"></app-field-error>
     </div>
 

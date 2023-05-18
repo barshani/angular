@@ -79,7 +79,6 @@ export class CustomersPageComponent {
             error: (err) =>{
                 console.log(err)
                 this.error=true;
-                
             }
         })
     }
@@ -95,5 +94,8 @@ export class CustomersPageComponent {
             },
             error: (err) => console.log(err)
         })
+    }
+    deleteEror(){
+        this.error=false;
     }
   }

@@ -16,7 +16,7 @@
       <app-customers-error [formField]="getFieldControl('phone')"></app-customers-error>
     </div>
     <div class="col-2">
-      <input formControlName="email" type="text" class="form-control" placeholder="email">
+      <input (change)="deleteEror()" formControlName="email" type="text" class="form-control" placeholder="email">
       <app-customers-error [formField]="getFieldControl('email')"></app-customers-error>
       <div *ngIf="error" class="rounded text-danger bg-light p-2 mb-2">
         <i class="bi-exclamation-circle-fill"></i>
